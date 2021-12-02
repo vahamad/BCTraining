@@ -103,11 +103,11 @@ tableextension 50200 "TPZItem" extends Item
                 ValidateShortcutDimCode(5, "Shortcut Dimension 5 Code");
 
                 //TOP130 KT ABCSI Item List Sort and Filter by Status 04102015
-                if "Shortcut Dimension 5 Code" <> xRec."Shortcut Dimension 5 Code" then;
-                // if StockStatusWkshLine.GET("No.") then begin
-                //     StockStatusWkshLine."Shortcut Dimension 5 Code" := "Shortcut Dimension 5 Code";
-                //     StockStatusWkshLine.MODIFY;
-                // end;
+                if "Shortcut Dimension 5 Code" <> xRec."Shortcut Dimension 5 Code" then
+                    if StockStatusWkshLine.GET("No.") then begin
+                        StockStatusWkshLine."Shortcut Dimension 5 Code" := "Shortcut Dimension 5 Code";
+                        StockStatusWkshLine.MODIFY;
+                    end;
                 //TOP130 KT ABCSI Item List Sort and Filter by Status 04102015
             end;
         }
@@ -229,10 +229,10 @@ tableextension 50200 "TPZItem" extends Item
                         VALIDATE("Product Group Code");
                     *///TODO:
                     //TOP010 KT ABCSI Stock Status Quick Quote Screen - 01132015
-                    // if StockStatusWkshLine.GET("No.") then begin
-                    //     StockStatusWkshLine."Item Category Code" := "Item Category Code";
-                    //     StockStatusWkshLine.MODIFY;
-                    // end;
+                    if StockStatusWkshLine.GET("No.") then begin
+                        StockStatusWkshLine."Item Category Code" := "Item Category Code";
+                        StockStatusWkshLine.MODIFY;
+                    end;
                     //TOP010 KT ABCSI Stock Status Quick Quote Screen - 01132015
 
                 end;
@@ -322,11 +322,11 @@ tableextension 50200 "TPZItem" extends Item
             trigger OnValidate();
             begin
                 //<TPZ2839>
-                if "ABC Code" <> xRec."ABC Code" then;
-                // if StockStatusWkshLine.GET("No.") then begin
-                //     StockStatusWkshLine."ABC Code" := "ABC Code";
-                //     StockStatusWkshLine.MODIFY;
-                // end;
+                if "ABC Code" <> xRec."ABC Code" then
+                    if StockStatusWkshLine.GET("No.") then begin
+                        StockStatusWkshLine."ABC Code" := "ABC Code";
+                        StockStatusWkshLine.MODIFY;
+                    end;
                 //</TPZ2839>
             end;
         }
@@ -601,7 +601,7 @@ tableextension 50200 "TPZItem" extends Item
         Text14000701: Label '%1 is normally 12 digit, use this number anyway?';
         Text14000702: Label 'Nothing Changed.';
         "****ABCSI Globals****": Integer;
-        //StockStatusWkshLine: Record "Stock Status Wksh. Line";
+        StockStatusWkshLine: Record "Stock Status Wksh. Line";
         Text11123302: Label 'You have changed the %1 field value of the %2 %3.\\Do you want to update visibility of its variants?';
         Text14000551: Label 'AFP Item Usage Redirects must be removed before deleting this item.';
         //EventPublishers: Codeunit EventPublishers;//TODO:

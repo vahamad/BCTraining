@@ -1,0 +1,30 @@
+{
+  "id": "c8edc455-d7c0-48e8-96e2-cd0118462a8c",
+  "name": "TopazBCProject",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+   {  "id": "a85c4d9a-16ca-4cfc-a909-3290902e1cf3",
+    "name": "BCTraining",
+    "publisher": "Default publisher",
+    "version": "1.0.0.0"}
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 50600
+    }
+  ],
+  "showMyCode": true,
+  "runtime": "6.0"
+}
